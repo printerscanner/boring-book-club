@@ -25,7 +25,7 @@ export default function Home({ posts }) {
 					<div className="grid-item grid-item--link"><a href="https://printerscanner.net">↗ printer_scanner</a></div>
 				</div>
 			</div>
-			<div className="grid-layout ">
+			<div className="grid-layout">
 				<div className="grid-item span-2 about">
 					<p><b>printer_scanner</b> is an ongoing exploration of the relationship between printing and scanning.</p>
 
@@ -47,7 +47,7 @@ export default function Home({ posts }) {
 						}
 					);
 					return (
-						<div key={post.id} className="grid-item span-2">
+						<div key={post.id} className="grid-item">
 							<Link href={`/${post.id}`}>
 							<h2>
 								<Text text={post.properties.Name.title} />
