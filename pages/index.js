@@ -22,7 +22,7 @@ export default function Home({ posts }) {
 							Instagram
 						</a>
 					</div>
-					<div class="grid-item grid-item--link"><a href="https://printer-scanner.notion.site/Resources-7d37914123b74bb2ad9213a641a04645">↗ Resources</a></div>
+					<div class="grid-item grid-item--link"><a href="https://printerscanner.net">↗ printer_scanner</a></div>
 				</div>
 			</div>
 			<div className="grid-layout">
