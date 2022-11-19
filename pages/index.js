@@ -6,24 +6,21 @@ import { Text } from "./[id].js";
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export default function Home({ posts }) {
-  return (
-    <div>
-      <Head>
-        <title>printer_scanner</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-			<div>
-				<div className="grid-layout condensed-grid">
-					<div className="grid-item span-2"><Link href="/"><h1 className="logo">the blog</h1></Link></div>
-					<div className="grid-item span-2"></div>
-					<div className="grid-item grid-item--link">
-						<a className="right" href="https://instagram.com/printer_scanner">
-							Instagram
-						</a>
-					</div>
-					<div className="grid-item grid-item--link"><a href="https://printerscanner.net">↗ printer_scanner</a></div>
+	return (
+		<div>
+			<Head>
+				<title>printer_scanner</title>
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+			<div className="grid-layout condensed-grid">
+				<div className="grid-item"><Link href="/"><h1 className="logo">the blog</h1></Link></div>
+				<div className="grid-item span-3"></div>
+				<div className="grid-item grid-item--link">
+					<a className="right" href="https://instagram.com/printer_scanner">
+						Instagram
+					</a>
 				</div>
+				<div className="grid-item grid-item--link"><a href="https://printerscanner.net">↗ printer_scanner</a></div>
 			</div>
 			<div className="grid-layout">
 				<div className="grid-item span-2 about">
@@ -34,8 +31,8 @@ export default function Home({ posts }) {
 					<p>printer_scanner is run by the multi-award winning graphic designer, <a href="https://abbeyyacoe.info">abbey</a>.</p>
 
 					<p>
-            			If you'd like to get in touch, our email is <a href="mailto:contact@printerscanner.net"> contact@printerscanner.net</a>. You can also find us on <a href="https://www.behance.net/printerscanner">Behance</a> and <a href="https://instagram.com/printer_scanner">Instagram</a>.
-          			</p>
+						If you'd like to get in touch, our email is <a href="mailto:contact@printerscanner.net"> contact@printerscanner.net</a>. You can also find us on <a href="https://www.behance.net/printerscanner">Behance</a> and <a href="https://instagram.com/printer_scanner">Instagram</a>.
+					</p>
 				</div>
 				{posts.map((post) => {
 					const date = new Date(post.created_time).toLocaleString(
@@ -49,29 +46,41 @@ export default function Home({ posts }) {
 					return (
 						<div key={post.id} className="grid-item">
 							<Link href={`/${post.id}`}>
-							<h2>
-								<Text text={post.properties.Name.title} />
-							</h2>
+								<h2>
+									<Text text={post.properties.Name.title} />
+								</h2>
 
-								<p>{date}</p>
+								<p className="date">{date}</p>
 								<p>Read post →</p>
 							</Link>
 						</div>
 					);
 				})}
 			</div>
-    </main>
-  </div>
-  );
+			<footer>
+				<br />
+				<div className="grid-layout condensed-grid">
+					<div className="grid-item">
+						<a href="mailto:contact@printerscanner.net">
+							contact@printerscanner.net
+						</a>
+					</div>
+					<div className="grid-item span-4"></div>
+					<div className="grid-item"><a className="right" href="https://instagram.com/printer_scanner">Instagram</a></div>
+				</div>
+				<br />
+			</footer>
+		</div>
+	);
 }
 
 export const getStaticProps = async () => {
-  const database = await getDatabase(databaseId);
+	const database = await getDatabase(databaseId);
 
-  return {
-    props: {
-      posts: database,
-    },
-    revalidate: 1,
-  };
+	return {
+		props: {
+			posts: database,
+		},
+		revalidate: 1,
+	};
 };

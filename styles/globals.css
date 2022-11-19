@@ -31,7 +31,6 @@ body {
 
 h2 {
 	margin: .3rem 0;
-	font-size: xx-large;
 }
 
 h5 {
@@ -55,10 +54,6 @@ a:hover {
 
 hr {
 	border: 1px solid;
-}
-
-article {
-	margin-top: 30px;
 }
 
 ::-moz-selection {
@@ -175,6 +170,11 @@ article {
 	grid-row-end: span 1;
 }
 
+.span-4 {
+	grid-column-end: span 4;
+	grid-row-end: span 1;
+}
+
 .grid-number {
 	font-size: 13px;
 	position: absolute;
@@ -230,6 +230,10 @@ article {
 	-webkit-animation: none !important;
 }
 
+.date {
+	font-size: small;
+}
+
 @media only screen and (max-width: 1000px) {
 	.span-3 {
 		grid-column-end: span 10;
@@ -251,10 +255,6 @@ article {
 
 	.grid-item {
 		grid-column-end: span 10;
-	}
-
-	.grid-item.qr-code {
-		display: none;
 	}
 
 	.blog {
