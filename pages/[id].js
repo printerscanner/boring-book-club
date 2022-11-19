@@ -189,7 +189,7 @@ export default function Post({ page, blocks }) {
 			<footer>
 				<br />
 				<div className="grid-layout condensed-grid">
-					<div className="grid-item span-2">
+					<div className="grid-item">
 						<a href="mailto:contact@printerscanner.net">
 							contact@printerscanner.net
 						</a>
