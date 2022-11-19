@@ -15,19 +15,27 @@ export default function Home({ posts }) {
       <main>
 			<div>
 				<div className="grid-layout condensed-grid">
-					<div className="grid-item span-2"><Link href="/"><h1 className="logo">the printer_scanner blog</h1></Link></div>
-					<div class="grid-item span-2"></div>
+					<div className="grid-item span-2"><Link href="/"><h1 className="logo">the blog</h1></Link></div>
+					<div className="grid-item span-2"></div>
 					<div className="grid-item grid-item--link">
 						<a className="right" href="https://instagram.com/printer_scanner">
 							Instagram
 						</a>
 					</div>
-					<div class="grid-item grid-item--link"><a href="https://printerscanner.net">↗ printer_scanner</a></div>
+					<div className="grid-item grid-item--link"><a href="https://printerscanner.net">↗ printer_scanner</a></div>
 				</div>
 			</div>
-			<div className="grid-layout">
-				<div class="grid-item span-2">
-					  <p>From the minds that brought you printer_scanner, introducing the printer_scanner blog.</p>
+			<div className="grid-layout ">
+				<div className="grid-item span-2 about">
+					<p><b>printer_scanner</b> is an ongoing exploration of the relationship between printing and scanning.</p>
+
+					<p>When we take on new projects, we think to ourselves, is this <i>printer</i> or is this <i>scanner?</i> If the answer is yes to either, then it is printer_scanner.</p>
+
+					<p>printer_scanner is run by the multi-award winning graphic designer, <a href="https://abbeyyacoe.info">abbey</a>.</p>
+
+					<p>
+            			If you'd like to get in touch, our email is <a href="mailto:contact@printerscanner.net"> contact@printerscanner.net</a>. You can also find us on <a href="https://www.behance.net/printerscanner">Behance</a> and <a href="https://instagram.com/printer_scanner">Instagram</a>.
+          			</p>
 				</div>
 				{posts.map((post) => {
 					const date = new Date(post.created_time).toLocaleString(

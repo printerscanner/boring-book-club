@@ -169,7 +169,7 @@ export default function Post({ page, blocks }) {
 
       <article className={styles.container}>
 				<Link href="/" className={styles.back}>
-					← Go home
+					←
 				</Link>
         <h1 className={styles.name}>
           <Text text={page.properties.Name.title} />

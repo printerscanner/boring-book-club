@@ -1,12 +1,8 @@
 .container {
-  padding: 0 20px;
+  padding: 50px 0;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.5;
-}
-
-.container h1 {
-  font-size: 32px;
 }
 
 .container img {
@@ -29,7 +25,7 @@
 
 .back {
   display: inline-block;
-  margin-bottom: 20px;
+	font-size: 30px;
 }
 
 .bold {
