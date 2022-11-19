@@ -168,12 +168,12 @@ export default function Post({ page, blocks }) {
       </Head>
 
       <article className={styles.container}>
-        <h1 className={styles.name}>
-          <Text text={page.properties.Name.title} />
-        </h1>
 				<Link href="/" className={styles.back}>
 					← Go home
 				</Link>
+        <h1 className={styles.name}>
+          <Text text={page.properties.Name.title} />
+        </h1>
         <section>
           {blocks.map((block) => (
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
