@@ -4,35 +4,27 @@ import { getDatabase } from "../lib/notion";
 import { Text } from "./[id].js";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
+
+const randomClass = (value) => {
+	return Math.floor(Math.random() * value);
+};
+
 export default function Home({ posts }) {
 	return (
 		<div>
 			<Head>
-				<title>printer_scanner</title>
-				<link rel="icon" href="/favicon.ico" />
+				<title>Boring Book Club</title>
+				<link rel="icon" href="/favicon.png" />
 			</Head>
-			<div className="grid-layout condensed-grid">
-				<div className="grid-item"><Link href="/"><h1 className="logo">the blog</h1></Link></div>
-				<div className="grid-item span-3"></div>
-				<div className="grid-item grid-item--link">
-					<a className="right" href="https://instagram.com/printer_scanner">
-						Instagram
-					</a>
-				</div>
-				<div className="grid-item grid-item--link"><a href="https://printerscanner.net">↗ printer_scanner</a></div>
-			</div>
 			<div className="grid-layout">
-				<div className="grid-item span-2 about">
-					<p>The <b>printer_scanner</b> blog aims to solve the worlds toughest questions through thoughtful, reasoned dialog.</p>
+				<div className="grid-item span-2">
+					<div><Link href="/"><h1 className="">boring book club</h1></Link></div>
+					<a href="https://printerscanner.net">by printer_scanner</a>
+					<div>
+						<a href="/2ae8ba85-f712-4e52-80e0-57ddc64cf1fa">about</a>
+					</div>
 
-					<p>printer_scanner is run by the multi-award winning graphic designer, <a href="https://abbeyyacoe.info">abbey</a>. We explore themes related to printing and scanning.</p>
-
-					<p>This blog is built with Notion as the backend. You can take a look at the database <a href="https://www.notion.so/printer-scanner/d6acfbec7b734db09375cf20d5298db2?v=9ce0c0a99a824a949a6e328b32b7262a">here</a>.</p>
-
-					<p>
-						If you have a complaint, or would like to get in touch, our email is <a href="mailto:contact@printerscanner.net"> contact@printerscanner.net</a>. You can also find us on <a href="https://instagram.com/printer_scanner">Instagram</a>.
-					</p>
-				</div>
+			</div>
 				{posts.map((post) => {
 					const date = new Date(post.created_time).toLocaleString(
 						"en-US",
@@ -43,14 +35,11 @@ export default function Home({ posts }) {
 						}
 					);
 					return (
-						<div key={post.id} className="grid-item">
+						<div key={post.id} className="grid-item" style={{gridColumnEnd: "span " + randomClass(3), gridRowEnd: "span " + randomClass(3)}} >
 							<Link href={`/${post.id}`}>
 								<h2>
 									<Text text={post.properties.Name.title} />
 								</h2>
-
-								<p className="date">{date}</p>
-								<p>Read post →</p>
 							</Link>
 						</div>
 					);

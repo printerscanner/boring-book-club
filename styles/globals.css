@@ -1,14 +1,17 @@
 @font-face {
-	font-family: 'Neue Montreal';
-	src: url("fonts/PPNeueMontreal-Regular.woff") format("woff");
+	font-family: "ABCDiatypeVariable";
+	src: url("fonts/ABCDiatypeVariable-Trial.woff") format('woff');
 }
 
 @font-face {
-	font-family: 'Neue Montreal';
-	src: url("fonts/PPNeueMontreal-Bold.woff") format("woff");
-	font-weight: 700;
+	font-family: "ABCDiatypeVariable";
+	src: url("fonts/ABCDiatypeVariable-Trial.woff2") format('woff2');
 }
 
+@font-face {
+	font-family: "ABCGintoNord-Black-Trial";
+	src: url("fonts/ABCGintoNord-Black-Trial.woff") format('woff');
+}
 /**/
 
 html {
@@ -17,6 +20,7 @@ html {
 }
 
 body {
+
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -24,9 +28,13 @@ body {
 	background-color: inherit;
 	width: 95%;
 	margin: auto;
-	font-family: 'Neue Montreal', sans-serif;
+	font-family: 'ABCDiatypeVariable', sans-serif;
 	/* background-color: #F7F1E9; */
 	/* color: #131313; */
+}
+
+h2 {
+	font-weight: 500;
 }
 
 
@@ -41,7 +49,8 @@ a {
 }
 
 a:hover {
-	opacity: .6;
+	text-decoration: underline;
+	color: blue;
 	transition: .2s;
 }
 
@@ -120,8 +129,8 @@ hr {
 	grid-auto-flow: dense;
 	border-top: 0px;
 	margin-top: 30px;
-	border-left: 1px solid;
-	border-top: 1px solid;
+	/* border-left: 1px solid; */
+	/* border-top: 1px solid; */
 }
 
 .grid-layout.condensed-grid {
@@ -130,9 +139,10 @@ hr {
 }
 
 .grid-item {
-	padding: 1.5rem;
-	border-right: 1px solid;
-	border-bottom: 1px solid;
+	padding: 1.5rem 0;
+	padding-right: 1.5rem;
+	/* border-right: 1px solid; */
+	/* border-bottom: 1px solid; */
 	border-radius: inherit;
 	position: relative;
 	word-wrap: break-word;
@@ -166,6 +176,16 @@ hr {
 
 .span-4 {
 	grid-column-end: span 4;
+	grid-row-end: span 1;
+}
+
+.span-5 {
+	grid-column-end: span 5;
+	grid-row-end: span 1;
+}
+
+.span-6 {
+	grid-column-end: span 5;
 	grid-row-end: span 1;
 }
 
@@ -248,7 +268,7 @@ hr {
 	}
 
 	.grid-item {
-		grid-column-end: span 10;
+		grid-column-end: span 10 !important;
 	}
 
 	.blog {
