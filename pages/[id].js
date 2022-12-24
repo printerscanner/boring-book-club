@@ -4,6 +4,7 @@ import { getDatabase, getPage, getBlocks } from "../lib/notion";
 import Link from "next/link";
 import { databaseId } from "./index.js";
 import styles from "./post.module.css";
+import { randomColor } from "./index.js";
 
 export const Text = ({ text }) => {
 	if (!text) {
@@ -160,23 +161,28 @@ export default function Post({ page, blocks }) {
 		return <div />;
 	}
 	return (
-		<div>
+		<div style={{minHeight: '100vh', display: 'flex'
+}} >
 			<Head>
 				<title>{page.properties.Name.title[0].plain_text}</title>
 				<link rel="icon" href="/favicon.png" />
 			</Head>
 			<div>
 				<div className="grid-layout condensed-grid">
-					<div className="grid-item span-2"><Link href="/"><h1 className="logo">boring book club</h1></Link></div>
-					<div className="grid-item span-3"></div>
-					<div className="grid-item grid-item--link"><a href="https://printerscanner.net">↗ printer_scanner</a></div>
+					<div className="grid-item span-2" style={{ backgroundColor: randomColor() }}><Link href="/"><h1 className="logo">boring book club</h1></Link>
+						<a href="https://printerscanner.net">by printer_scanner</a>
+						<div>
+							<a href="/2ae8ba85-f712-4e52-80e0-57ddc64cf1fa">about</a>
+						</div>
+					</div>
+
 				</div>
 			</div>
-			<Link href="/" className={styles.back}>
-				←
-			</Link>
+			<div className="grid-item" style={{ backgroundColor: randomColor(), flexGrow: 1 }}>
 			<article className={styles.container}>
-
+				<Link href="/" className={styles.back}>
+					←
+				</Link>
 				<h1 className={styles.name}>
 					<Text text={page.properties.Name.title} />
 				</h1>
@@ -186,18 +192,16 @@ export default function Post({ page, blocks }) {
 					))}
 				</section>
 			</article>
+			</div>
 			<footer>
-				<br />
-				<div className="grid-layout condensed-grid">
-					<div className="grid-item">
+				<div className="grid-layout condensed-grid" >
+					<div className="grid-item" style={{ backgroundColor: randomColor() }}>
 						<a href="mailto:contact@printerscanner.net">
 							contact@printerscanner.net
 						</a>
 					</div>
-					<div className="grid-item span-4"></div>
-					<div className="grid-item"><a className="right" href="https://instagram.com/printer_scanner">Instagram</a></div>
+					<div className="grid-item" style={{ backgroundColor: randomColor() }}><a className="right" href="https://instagram.com/printer_scanner">Instagram</a></div>
 				</div>
-				<br />
 			</footer>
 		</div>
 	);

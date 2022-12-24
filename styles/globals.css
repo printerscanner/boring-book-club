@@ -228,6 +228,8 @@ hr {
 	font-size: small;
 }
 
+
+
 @media only screen and (max-width: 1000px) {
 	.span-3 {
 		grid-column-end: span 10;

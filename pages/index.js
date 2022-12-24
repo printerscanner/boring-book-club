@@ -9,7 +9,7 @@ const randomClass = (value) => {
 	return Math.floor(Math.random() * value);
 };
 
-const randomColor = () => {
+export const randomColor = () => {
 	return "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); });
 }
 
@@ -56,7 +56,7 @@ export default function Home({ posts }) {
 							contact@printerscanner.net
 						</a>
 					</div>
-					<div className="grid-item" style={{ backgroundColor: randomColor() }} ><a className="right" href="https://instagram.com/printer_scanner">Instagram</a></div>
+					<div className="grid-item" style={{ backgroundColor: randomColor() }}><a href="https://instagram.com/printer_scanner">Instagram</a></div>
 				</div>
 			</footer>
 		</div>
