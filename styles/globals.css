@@ -26,10 +26,10 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
 	background-color: inherit;
-	width: 95%;
-	margin: auto;
+	/* width: 95%; */
+	/* margin: auto; */
 	font-family: 'ABCDiatypeVariable', sans-serif;
-	/* background-color: #F7F1E9; */
+	background-color: grey;
 	/* color: #131313; */
 }
 
@@ -42,6 +42,7 @@ a {
 	color: inherit;
 	cursor: pointer;
 	text-decoration: none;
+	mix-blend-mode: overlay;
 }
 
 .about a {
@@ -124,11 +125,11 @@ hr {
 /* Grid */
 .grid-layout {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(15%, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
 	/* grid-auto-rows: minmax(300px, auto); */
 	grid-auto-flow: dense;
 	border-top: 0px;
-	margin-top: 30px;
+	/* margin-top: 30px; */
 	/* border-left: 1px solid; */
 	/* border-top: 1px solid; */
 }
@@ -139,15 +140,14 @@ hr {
 }
 
 .grid-item {
-	padding: 1.5rem 0;
-	padding-right: 1.5rem;
+	padding: 1.5rem;
 	/* border-right: 1px solid; */
 	/* border-bottom: 1px solid; */
 	border-radius: inherit;
 	position: relative;
 	word-wrap: break-word;
-
-	&:nth-child(odd) {}
+	border: 2px solid black;
+	border-radius: 25px;
 }
 
 .grid-item img {
@@ -166,26 +166,6 @@ hr {
 
 .span-2 {
 	grid-column-end: span 2;
-	grid-row-end: span 1;
-}
-
-.span-3 {
-	grid-column-end: span 3;
-	grid-row-end: span 1;
-}
-
-.span-4 {
-	grid-column-end: span 4;
-	grid-row-end: span 1;
-}
-
-.span-5 {
-	grid-column-end: span 5;
-	grid-row-end: span 1;
-}
-
-.span-6 {
-	grid-column-end: span 5;
 	grid-row-end: span 1;
 }
 

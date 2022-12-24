@@ -9,6 +9,10 @@ const randomClass = (value) => {
 	return Math.floor(Math.random() * value);
 };
 
+const randomColor = () => {
+	return "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); });
+}
+
 export default function Home({ posts }) {
 	return (
 		<div>
@@ -17,7 +21,7 @@ export default function Home({ posts }) {
 				<link rel="icon" href="/favicon.png" />
 			</Head>
 			<div className="grid-layout">
-				<div className="grid-item span-2">
+				<div className="grid-item span-12" style={{ backgroundColor: randomColor() }} >
 					<div><Link href="/"><h1 className="">boring book club</h1></Link></div>
 					<a href="https://printerscanner.net">by printer_scanner</a>
 					<div>
@@ -25,7 +29,7 @@ export default function Home({ posts }) {
 					</div>
 
 			</div>
-				{posts.map((post) => {
+				{posts.map((post, i) => {
 					const date = new Date(post.created_time).toLocaleString(
 						"en-US",
 						{
@@ -35,7 +39,7 @@ export default function Home({ posts }) {
 						}
 					);
 					return (
-						<div key={post.id} className="grid-item" style={{gridColumnEnd: "span " + randomClass(3), gridRowEnd: "span " + randomClass(3)}} >
+						<div key={post.id} className="grid-item span-12" style={{backgroundColor: randomColor()}} >
 							<Link href={`/${post.id}`}>
 								<h2>
 									<Text text={post.properties.Name.title} />
@@ -46,17 +50,14 @@ export default function Home({ posts }) {
 				})}
 			</div>
 			<footer>
-				<br />
 				<div className="grid-layout condensed-grid">
-					<div className="grid-item">
+					<div className="grid-item" style={{ backgroundColor: randomColor() }} >
 						<a href="mailto:contact@printerscanner.net">
 							contact@printerscanner.net
 						</a>
 					</div>
-					<div className="grid-item span-4"></div>
-					<div className="grid-item"><a className="right" href="https://instagram.com/printer_scanner">Instagram</a></div>
+					<div className="grid-item" style={{ backgroundColor: randomColor() }} ><a className="right" href="https://instagram.com/printer_scanner">Instagram</a></div>
 				</div>
-				<br />
 			</footer>
 		</div>
 	);
