@@ -161,24 +161,23 @@ export default function Post({ page, blocks }) {
 		return <div />;
 	}
 	return (
-		<div style={{minHeight: '100vh', display: 'flex'
-}} >
+		<div className={styles.content} >
 			<Head>
 				<title>{page.properties.Name.title[0].plain_text}</title>
 				<link rel="icon" href="/favicon.png" />
 			</Head>
 			<div>
 				<div className="grid-layout condensed-grid">
-					<div className="grid-item span-2" style={{ backgroundColor: randomColor() }}><Link href="/"><h1 className="logo">boring book club</h1></Link>
+					<div className="grid-item span-2" style={{ backgroundColor: randomColor()}}><Link href="/"><h1 className="logo">boring book club</h1></Link>
 						<a href="https://printerscanner.net">by printer_scanner</a>
 						<div>
 							<a href="/2ae8ba85-f712-4e52-80e0-57ddc64cf1fa">about</a>
 						</div>
 					</div>
-
 				</div>
 			</div>
-			<div className="grid-item" style={{ backgroundColor: randomColor(), flexGrow: 1 }}>
+			<div className="grid-layout" style={{ flexGrow: 1 }}>
+			<div className="grid-item" style={{ backgroundColor: randomColor() }}>
 			<article className={styles.container}>
 				<Link href="/" className={styles.back}>
 					←
@@ -192,6 +191,7 @@ export default function Post({ page, blocks }) {
 					))}
 				</section>
 			</article>
+			</div>
 			</div>
 			<footer>
 				<div className="grid-layout condensed-grid" >
