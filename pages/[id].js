@@ -4,7 +4,26 @@ import { getDatabase, getPage, getBlocks } from "../lib/notion";
 import Link from "next/link";
 import { databaseId } from "./index.js";
 import styles from "./post.module.css";
-import { randomColor } from "./index.js";
+
+const rgb = [100, 50, 0];
+
+
+function setContrast() {
+	// Randomly update colours
+	rgb[0] = Math.round(Math.random() * 255);
+	rgb[1] = Math.round(Math.random() * 255);
+	rgb[2] = Math.round(Math.random() * 255);
+  
+	// http://www.w3.org/TR/AERT#color-contrast
+	const brightness = Math.round(((parseInt(rgb[0]) * 299) +
+						(parseInt(rgb[1]) * 587) +
+						(parseInt(rgb[2]) * 114)) / 1000);
+	const textColour = (brightness > 125) ? '#202020' : '#e7e7e7';
+	const backgroundColour = 'rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')';
+	return {textColour:textColour, backgroundColour:backgroundColour }
+  }
+  let Vals = setContrast();
+
 
 export const Text = ({ text }) => {
 	if (!text) {
@@ -168,7 +187,7 @@ export default function Post({ page, blocks }) {
 			</Head>
 			<div>
 				<div className="grid-layout condensed-grid">
-					<div className="grid-item span-2" style={{ backgroundColor: randomColor()}}><Link href="/"><h1 className="logo">boring book club</h1></Link>
+					<div className="grid-item span-2" style={{ backgroundColor: Vals.backgroundColour, color: Vals.textColour }}><Link href="/"><h1 className="logo">boring book club</h1></Link>
 						<a href="https://printerscanner.net">by printer_scanner</a>
 						<div>
 							<a href="/2ae8ba85-f712-4e52-80e0-57ddc64cf1fa">about</a>
@@ -177,7 +196,7 @@ export default function Post({ page, blocks }) {
 				</div>
 			</div>
 			<div className="grid-layout" style={{ flexGrow: 1 }}>
-			<div className="grid-item" style={{ backgroundColor: randomColor() }}>
+			<div className="grid-item" style={{ backgroundColor: Vals.backgroundColour, color: Vals.textColour }}>
 			<article className={styles.container}>
 				<Link href="/" className={styles.back}>
 					←
@@ -195,12 +214,12 @@ export default function Post({ page, blocks }) {
 			</div>
 			<footer>
 				<div className="grid-layout condensed-grid" >
-					<div className="grid-item" style={{ backgroundColor: randomColor() }}>
+					<div className="grid-item" style={{ backgroundColor: Vals.backgroundColour, color: Vals.textColour }}>
 						<a href="mailto:contact@printerscanner.net">
 							contact@printerscanner.net
 						</a>
 					</div>
-					<div className="grid-item" style={{ backgroundColor: randomColor() }}><a className="right" href="https://instagram.com/printer_scanner">Instagram</a></div>
+					<div className="grid-item" style={{ backgroundColor: Vals.backgroundColour, color: Vals.textColour }}><a className="right" href="https://instagram.com/printer_scanner">Instagram</a></div>
 				</div>
 			</footer>
 		</div>

@@ -5,13 +5,26 @@ import { Text } from "./[id].js";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
-const randomClass = (value) => {
-	return Math.floor(Math.random() * value);
-};
+const rgb = [100, 50, 0];
 
-export const randomColor = () => {
-	return "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); });
-}
+
+function setContrast() {
+	// Randomly update colours
+	rgb[0] = Math.round(Math.random() * 255);
+	rgb[1] = Math.round(Math.random() * 255);
+	rgb[2] = Math.round(Math.random() * 255);
+  
+	// http://www.w3.org/TR/AERT#color-contrast
+	const brightness = Math.round(((parseInt(rgb[0]) * 299) +
+						(parseInt(rgb[1]) * 587) +
+						(parseInt(rgb[2]) * 114)) / 1000);
+	const textColour = (brightness > 125) ? '#202020' : '#e7e7e7';
+	const backgroundColour = 'rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')';
+	return {textColour:textColour, backgroundColour:backgroundColour }
+  }
+  let Vals = setContrast();
+
+
 
 export default function Home({ posts }) {
 	return (
@@ -21,7 +34,7 @@ export default function Home({ posts }) {
 				<link rel="icon" href="/favicon.png" />
 			</Head>
 			<div className="grid-layout">
-				<div className="grid-item span-12" style={{ backgroundColor: randomColor() }} >
+				<div className="grid-item span-12" style={{ backgroundColor: Vals.backgroundColour, color: Vals.textColour }} >
 					<div><Link href="/"><h1 className="">boring book club</h1></Link></div>
 					<a href="https://printerscanner.net">by printer_scanner</a>
 					<div>
@@ -38,8 +51,10 @@ export default function Home({ posts }) {
 							year: "numeric",
 						}
 					);
+					let Vals = setContrast();
+				  
 					return (
-						<div key={post.id} className="grid-item span-12" style={{backgroundColor: randomColor()}} >
+						<div key={post.id} className="grid-item span-2" style={{ backgroundColor: Vals.backgroundColour, color: Vals.textColour }} >
 							<Link href={`/${post.id}`}>
 								<h2>
 									<Text text={post.properties.Name.title} />
@@ -51,12 +66,12 @@ export default function Home({ posts }) {
 			</div>
 			<footer>
 				<div className="grid-layout condensed-grid">
-					<div className="grid-item" style={{ backgroundColor: randomColor() }} >
+					<div className="grid-item span-12" style={{ backgroundColor: Vals.backgroundColour, color: Vals.textColour }} >
 						<a href="mailto:contact@printerscanner.net">
 							contact@printerscanner.net
 						</a>
 					</div>
-					<div className="grid-item" style={{ backgroundColor: randomColor() }}><a href="https://instagram.com/printer_scanner">Instagram</a></div>
+					<div className="grid-item span-12" style={{ backgroundColor: Vals.backgroundColour, color: Vals.textColour }}><a href="https://instagram.com/printer_scanner">Instagram</a></div>
 				</div>
 			</footer>
 		</div>
