@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { getDatabase } from "../lib/notion";
-import { Text } from "./[id].js";
+import { Text } from "./[slug].js";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -55,7 +55,7 @@ export default function Home({ posts }) {
 				  
 					return (
 						<div key={post.id} className="grid-item span-2" style={{ backgroundColor: Vals.backgroundColour, color: Vals.textColour }} >
-							<Link href={`/${post.id}`}>
+							<Link href={`/${post.properties.slug.rich_text[0]?.plain_text}`}>
 								<h2>
 									<Text text={post.properties.Name.title} />
 								</h2>
