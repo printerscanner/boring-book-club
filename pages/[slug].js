@@ -187,7 +187,7 @@ export default function Post({ page, blocks }) {
 			</Head>
 			<div>
 				<div className="grid-layout condensed-grid">
-					<div className="grid-item span-2" style={{ backgroundColor: Vals.backgroundColour, color: Vals.textColour }}><Link href="/"><h1 className="logo">boring book club</h1></Link>
+					<div className="grid-item span-2" style={{ backgroundColor: Vals.backgroundColour, color: Vals.textColour }}><Link href="/"><h1 className="logo">boring books</h1></Link>
 						<a href="https://printerscanner.net">by printer_scanner</a>
 						<div>
 							<a href="/about">about</a>
@@ -203,6 +203,7 @@ export default function Post({ page, blocks }) {
 				</Link>
 				<h1 className={styles.name}>
 					<Text text={page.properties.Name.title} />
+					<p style={{fontSize: '15px'}}>{page.properties.Year && page.properties.Year.rich_text[0].plain_text}</p>
 				</h1>
 				<section>
 					{blocks.map((block) => (

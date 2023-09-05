@@ -1,3 +1,8 @@
+.container a {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
 .container {
 	max-width: 700px;
 	margin: 0 auto;
