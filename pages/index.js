@@ -38,7 +38,7 @@ export default function Home({ posts }) {
 					<div><Link href="/"><h1 className="">boring book club</h1></Link></div>
 					<a href="https://printerscanner.net">by printer_scanner</a>
 					<div>
-						<a href="/2ae8ba85-f712-4e52-80e0-57ddc64cf1fa">about</a>
+						<a href="/about">about</a>
 					</div>
 
 			</div>

@@ -190,7 +190,7 @@ export default function Post({ page, blocks }) {
 					<div className="grid-item span-2" style={{ backgroundColor: Vals.backgroundColour, color: Vals.textColour }}><Link href="/"><h1 className="logo">boring book club</h1></Link>
 						<a href="https://printerscanner.net">by printer_scanner</a>
 						<div>
-							<a href="/2ae8ba85-f712-4e52-80e0-57ddc64cf1fa">about</a>
+							<a href="/about">about</a>
 						</div>
 					</div>
 				</div>
@@ -228,7 +228,6 @@ export default function Post({ page, blocks }) {
 
 export const getStaticPaths = async () => {
 	const database = await getDatabase(databaseId);
-	database.map((page) => (console.log(page.properties.slug.rich_text[0]?.plain_text)))
 	return {
 		paths: database.map((page) => ({ params: { slug: page.properties.slug.rich_text[0]?.plain_text } })),
 		fallback: true,
