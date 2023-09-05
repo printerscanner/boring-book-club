@@ -231,32 +231,23 @@ hr {
 	font-size: small;
 }
 
+@media only screen and (max-width: 1300px) {
+	.span-2 {
+		grid-column: span 4;
+	}
+}
+
 
 
 @media only screen and (max-width: 1000px) {
-	.span-3 {
-		grid-column: span 10;
+	.span-2 {
+		grid-column: span 6;
 	}
+}
 
+@media only screen and (max-width: 500px) {
 	.span-2 {
 		grid-column: span 12;
 	}
 }
 
-@media only screen and (max-width: 1000px) {
-	.span-3 {
-		grid-column-end: span 10;
-	}
-
-	.span-2 {
-		grid-column-end: span 10;
-	}
-
-	.grid-item {
-		grid-column-end: span 10 !important;
-	}
-
-	.blog {
-		width: 100%;
-	}
-}
