@@ -1,16 +1,20 @@
 @font-face {
-	font-family: "ABCDiatypeVariable";
-	src: url("fonts/ABCDiatypeVariable-Trial.woff") format('woff');
+	font-family: 'Neue Montreal';
+	src: url("fonts/PPNeueMontreal-Regular.woff") format("woff");
 }
 
 @font-face {
-	font-family: "ABCDiatypeVariable";
-	src: url("fonts/ABCDiatypeVariable-Trial.woff2") format('woff2');
+	font-family: 'Neue Montreal';
+	src: url("fonts/PPNeueMontreal-Bold.woff") format("woff");
+	font-weight: 700;
 }
 
+
 @font-face {
-	font-family: "ABCGintoNord-Black-Trial";
-	src: url("fonts/ABCGintoNord-Black-Trial.woff") format('woff');
+	font-family: 'Neue Montreal';
+	src: url("fonts/PPNeueMontreal-Italic.woff") format("woff");
+	font-weight: 700;
+	font-style: italic;
 }
 /**/
 
@@ -26,15 +30,15 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
 	background-color: inherit;
-	/* width: 95%; */
-	/* margin: auto; */
-	font-family: 'ABCDiatypeVariable', sans-serif;
+		/* width: 95%; 
+		margin: auto;  */
+	font-family: 'Neue Montreal', sans-serif;
 	background-color: grey;
-	/* color: #131313; */
+	color: #131313;
 }
 
 h2 {
-	font-weight: 500;
+	font-weight: 400;
 }
 
 

@@ -56,9 +56,9 @@ export default function Home({ posts }) {
 					return (
 						<div key={post.id} className="grid-item span-2" style={{ backgroundColor: Vals.backgroundColour, color: Vals.textColour }} >
 							<Link href={`/${post.properties.slug && post.properties.slug.rich_text[0].plain_text}`}>
-								<h2>
+								<h3>
 									<Text text={post.properties.Name.title} />
-								</h2>
+								</h3>
 							</Link>
 							<span style={{fontSize: '15px'}}>{post.properties.Year.rich_text && post.properties.Year.rich_text.map(text => <div>{text.plain_text}</div>)}</span>
 
