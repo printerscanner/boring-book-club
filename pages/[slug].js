@@ -216,8 +216,8 @@ export default function Post({ page, blocks }) {
 			<footer>
 				<div className="grid-layout condensed-grid" >
 					<div className="grid-item" style={{ backgroundColor: Vals.backgroundColour, color: Vals.textColour }}>
-						<a href="mailto:contact@printerscanner.net">
-							contact@printerscanner.net
+						<a href="mailto:itsprinterscanner@gmail.com">
+							itsprinterscanner@gmail.com
 						</a>
 					</div>
 					<div className="grid-item" style={{ backgroundColor: Vals.backgroundColour, color: Vals.textColour }}><a className="right" href="https://instagram.com/printer_scanner">Instagram</a></div>
